@@ -1,0 +1,48 @@
+{
+  "name": "@mbr/components",
+  "version": "1.0.0",
+  "description": "React components",
+  "main": "index.js",
+  "sideEffects": false,
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cqmbr/components.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "component",
+    "react-component",
+    "ui",
+    "ui-kit"
+  ],
+  "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cqmbr/components/issues"
+  },
+  "homepage": "https://github.com/cqmbr/components#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0-beta.54",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.2.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "peerDependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
