@@ -78,8 +78,8 @@ export default class Scroll extends React.PureComponent {
   onLayout = () => {
     if (this.wrapper && this.root) {
       this.contentHeight = this.wrapper.clientHeight + this.wrapper.offsetTop
-      this.scrollHeight = this.contentHeight > this.root.clientHeight ?
-        (this.contentHeight - this.root.clientHeight) : 0
+      this.scrollHeight = this.contentHeight > this.root.clientHeight
+        ? (this.contentHeight - this.root.clientHeight) : 0
     }
 
     if (this.topEl) {

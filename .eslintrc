@@ -1,10 +1,18 @@
 {
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "jest": true,
+    "browser": true
+  },
   "extends": [
     "standard",
-    "react"
+    "standard-react"
   ],
   "rules": {
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "jsx-quotes": ["error", "prefer-double"]
   }
 }
