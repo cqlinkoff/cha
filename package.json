@@ -2,7 +2,8 @@
   "name": "@cqmbr/cha",
   "version": "1.0.0",
   "description": "A Set of React Components",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "sideEffects": false,
   "scripts": {
     "test": "jest"
