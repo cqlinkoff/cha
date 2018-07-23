@@ -1,0 +1,40 @@
+@clsPrefix: 'cha';
+
+.@{clsPrefix}-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &.@{clsPrefix}-scroll-in-animation {
+    transition-property: transform;
+    transition-timing-function: linear;
+  }
+
+  & .@{clsPrefix}-scroll-content-wrapper {
+    background-color: #f8f8f8;
+    z-index: 2;
+  }
+
+  & .@{clsPrefix}-scroll-top-wrapper {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #B7B9BE;
+    font-size: 12px;
+
+    & .@{clsPrefix}-scroll-refresh-indicator {
+      min-height: 80px;
+
+      & .@{clsPrefix}-indicator {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@clsPrefix: 'cha';
+
+@keyframes roll {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  25% {
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+
+  50% {
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+
+  75% {
+    transform: rotate3d(0, 0, 1, 270deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
+.@{clsPrefix}-activity-indicator {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & .@{clsPrefix}-indicator {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid fade(#363A44, 30%);
+    border-left-color: #363A44;
+    animation: roll 1.5s linear infinite;
+  }
+}
