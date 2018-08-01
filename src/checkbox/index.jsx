@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import { addClsPrefix } from '../utils/helpers'
 import '../../style/components/checkbox.less'
 
 export default class Checkbox extends React.PureComponent {
@@ -9,8 +10,13 @@ export default class Checkbox extends React.PureComponent {
     onChange: PropTypes.func,
     type: PropTypes.string,
     disabled: PropTypes.bool,
-    className: PropTypes.string
-  };
+    className: PropTypes.string,
+    classPrefix: PropTypes.string
+  }
+
+  static defaultProps = {
+    classPrefix: 'cha'
+  }
 
   constructor (props) {
     super(props)
@@ -28,14 +34,9 @@ export default class Checkbox extends React.PureComponent {
   }
 
   componentWillReceiveProps (nextProps) {
-    const keys = ['checked', 'type', 'disabled']
-    const state = {}
-    keys.map(key => {
-      if (nextProps[key]) {
-        state[key] = nextProps[key]
-      }
+    this.setState({
+      disabled: !!nextProps.disabled
     })
-    this.setState(state)
   }
 
   _handleChange = (e) => {
@@ -52,26 +53,26 @@ export default class Checkbox extends React.PureComponent {
 
   render () {
     const { checked, type, disabled } = this.state
-    const { className } = this.props
-    const classPrefix = 'checkbox'
-    const containerClassName = classnames([`${classPrefix}-container`, {
-      [`${classPrefix}-container-checked`]: checked,
-      [`${classPrefix}-container-circle`]: type === 'circle',
-      [`${classPrefix}-container-disabled`]: disabled
+    const { className, classPrefix } = this.props
+    const cls = addClsPrefix('checkbox', classPrefix)
+    const containerClassName = classnames([addClsPrefix('container', cls), {
+      [addClsPrefix('container-checked', cls)]: checked,
+      [addClsPrefix('container-circle', cls)]: type === 'circle',
+      [addClsPrefix('container-disabled', cls)]: disabled
     }])
 
-    const checkClassName = classnames([`${classPrefix}-box`, {
-      [`${classPrefix}-box-checked`]: checked,
-      [`${classPrefix}-box-disabled`]: disabled
+    const checkClassName = classnames([addClsPrefix('box', cls), {
+      [addClsPrefix('box-checked', cls)]: checked,
+      [addClsPrefix('box-disabled', cls)]: disabled
     }])
 
     return (
-      <label className={classnames([classPrefix, className])}>
+      <div className={classnames([classPrefix, className])}>
         <input onChange={this._handleChange} className={`${classPrefix}-input`} disabled={disabled} type='checkbox' checked={checked} />
         <div className={containerClassName}>
           <div className={checkClassName} />
         </div>
-      </label>
+      </div>
     )
   }
 }
