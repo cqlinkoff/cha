@@ -6,7 +6,7 @@ import '../../style/components/checkbox.less'
 
 export default class Checkbox extends React.PureComponent {
   static propTypes = {
-    checked: PropTypes.bool,
+    defaultValue: PropTypes.bool,
     onChange: PropTypes.func,
     type: PropTypes.string,
     disabled: PropTypes.bool,
@@ -15,19 +15,20 @@ export default class Checkbox extends React.PureComponent {
   }
 
   static defaultProps = {
-    classPrefix: 'cha'
+    classPrefix: 'cha',
+    onChange: () => {}
   }
 
   constructor (props) {
     super(props)
 
     const {
-      checked = false,
+      defaultValue = false,
       type = 'square',
       disabled = false
     } = props
     this.state = {
-      checked,
+      checked: defaultValue,
       type,
       disabled
     }
@@ -42,9 +43,7 @@ export default class Checkbox extends React.PureComponent {
   _handleChange = (e) => {
     const { checked, disabled } = this.state
     if (!disabled) {
-      if (typeof this.props.onChange === 'function') {
-        this.props.onChange(!checked, e)
-      }
+      this.props.onChange(!checked, e)
       this.setState({
         checked: !checked
       })
@@ -53,7 +52,7 @@ export default class Checkbox extends React.PureComponent {
 
   render () {
     const { checked, type, disabled } = this.state
-    const { className, classPrefix } = this.props
+    const { className, classPrefix, defaultValue } = this.props
     const cls = addClsPrefix('checkbox', classPrefix)
     const containerClassName = classnames([addClsPrefix('container', cls), {
       [addClsPrefix('container-checked', cls)]: checked,
@@ -68,7 +67,7 @@ export default class Checkbox extends React.PureComponent {
 
     return (
       <div className={classnames([classPrefix, className])}>
-        <input onChange={this._handleChange} className={`${classPrefix}-input`} disabled={disabled} type='checkbox' checked={checked} />
+        <input onChange={this._handleChange} className={`${classPrefix}-input`} disabled={disabled} type='checkbox' defaultChecked={defaultValue} />
         <div className={containerClassName}>
           <div className={checkClassName} />
         </div>
