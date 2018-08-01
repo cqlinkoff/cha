@@ -1,0 +1,65 @@
+@prefix: checkbox;
+@defaultColor : #fff;
+@amount: 15%;
+@disabledColor: #dadddc;
+@disabledBorderColor: #969B9C;
+@checkedColor: #2C2D2F;
+@uncheckedBorderColor: #dfeaf5;
+
+.@{prefix} {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+  display: flex;
+
+  &-input {
+    display: none;
+  }
+
+  &-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid @uncheckedBorderColor;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  &-container-circle {
+    border-radius: 8px;
+  }
+
+  &-container-checked {
+    background-color: @checkedColor;
+    border-color: @checkedColor;
+  }
+
+  &-box {
+    opacity: 0;
+    border-left: 3px solid @defaultColor;
+    border-bottom: 3px solid @defaultColor;
+    border-bottom-left-radius: 1px;
+    width: 12px;
+    height: 8px;
+    position: relative;
+    left: 1px;
+    top: 1px;
+    transform: rotate(-50deg);
+    transition: all 0.3s ease;
+  }
+
+  &-box-checked {
+    opacity: 1;
+    border-color: #fff;
+  }
+
+  &-container-disabled {
+    cursor: not-allowed;
+    border-color: @disabledBorderColor;
+    background-color: @disabledColor;
+  }
+
+  &-box-disabled {
+    border-color: @disabledBorderColor;
+  }
+}

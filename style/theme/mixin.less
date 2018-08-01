@@ -1,0 +1,30 @@
+.flex {
+  display: flex;
+}
+
+.flexVertical {
+  .flex();
+  flex-direction: column;
+}
+
+.flexJustifyCenter {
+  .flex();
+  justify-content: center;
+}
+
+.flexAlignCenter {
+  .flex();
+  align-items: center;
+}
+
+.flexCenter {
+  .flex();
+  .flexJustifyCenter();
+  .flexAlignCenter();
+}
+
+.overflowEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

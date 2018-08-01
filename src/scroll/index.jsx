@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import ActivityIndicator from '../activity-indicator'
-
-import './style/index.less'
+import { addClsPrefix } from '../utils/helpers'
+import '../../style/components/scroll.less'
 
 export default class Scroll extends React.PureComponent {
   static propTypes = {
@@ -15,13 +15,15 @@ export default class Scroll extends React.PureComponent {
     onEndReachedThreshold: PropTypes.number,
     children: PropTypes.element,
     refreshing: PropTypes.bool,
-    refreshText: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
+    refreshText: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    classPrefix: PropTypes.string
   }
 
   static defaultProps = {
     refreshText: 'Pull To Refresh',
     onEndReachedThreshold: 100,
-    refreshing: false
+    refreshing: false,
+    classPrefix: 'cha'
   }
 
   constructor (props) {
@@ -137,6 +139,12 @@ export default class Scroll extends React.PureComponent {
         if (typeof this.props.onEndReached === 'function') {
           this.props.onEndReached()
         }
+      } else if ((this.topThreshold && this.offsetY < (this.topThreshold * 0.8) && this.offsetY > 0)) {
+        this.offsetY = 0
+        this.setState({
+          offsetY: this.offsetY,
+          animation: true
+        })
       }
 
       this.scrolling = false
@@ -145,7 +153,7 @@ export default class Scroll extends React.PureComponent {
 
   render () {
     const { height, animation, offsetY, opacity } = this.state
-    const { children, className, wrapperClassName, refreshing, refreshText } = this.props
+    const { children, className, wrapperClassName, refreshing, refreshText, classPrefix } = this.props
     const wrapperStyle = {
       transform: this.getTranslate3d(offsetY)
     }
@@ -159,14 +167,14 @@ export default class Scroll extends React.PureComponent {
         onTouchStart={this.handleScrollStart}
         onTouchMove={this.handleScroll}
         onTouchEnd={this.handleScrollEnd}
-        className={classnames(['cha-scroll-wrapper', className])}
+        className={classnames([addClsPrefix('scroll-wrapper', classPrefix), className])}
         style={{ height }}>
         <div
           ref={this.getTopEl}
           style={{ opacity }}
-          className="cha-scroll-top-wrapper">
+          className={addClsPrefix('scroll-top-wrapper', classPrefix)}>
           {refreshing ? (
-            <ActivityIndicator className="scroll-refresh-indicator" />
+            <ActivityIndicator className={addClsPrefix('scroll-refresh-indicator', classPrefix)} />
           ) : (
             <span>{refreshText}</span>
           )}
@@ -174,8 +182,8 @@ export default class Scroll extends React.PureComponent {
         <div
           ref={this.getWrapperEl}
           style={wrapperStyle}
-          className={classnames(['cha-scroll-content-wrapper', wrapperClassName, {
-            'cha-scroll-in-animation': animation
+          className={classnames([addClsPrefix('scroll-content-wrapper', classPrefix), wrapperClassName, {
+            [addClsPrefix('scroll-in-animation', classPrefix)]: animation
           }])}>{children}</div>
       </div>
     )
