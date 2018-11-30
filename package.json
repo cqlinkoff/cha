@@ -1,5 +1,5 @@
 {
-  "name": "@cqmbr/cha",
+  "name": "@cqlink/cha",
   "version": "1.0.0",
   "description": "A Set of React Components",
   "main": "lib/index.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cqmbr/cha.git"
+    "url": "git+https://github.com/cqlink/cha.git"
   },
   "keywords": [
     "react",
@@ -31,9 +31,9 @@
   "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cqmbr/cha/issues"
+    "url": "https://github.com/cqlink/cha/issues"
   },
-  "homepage": "https://github.com/cqmbr/cha#readme",
+  "homepage": "https://github.com/cqlink/cha#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
