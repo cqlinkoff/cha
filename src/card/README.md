@@ -5,7 +5,7 @@
 ## Use
 
 ```js
-import { Card } from '@cqmbr/cha'
+import { Card } from '@cqlinkoff/cha'
 ```
 
 ## Props

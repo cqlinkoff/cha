@@ -5,7 +5,7 @@
 ## Use
 
 ```js
-import { Scroll } from '@cqmbr/cha'
+import { Scroll } from '@cqlinkoff/cha'
 ```
 
 ## Props

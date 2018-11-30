@@ -1,5 +1,5 @@
 {
-  "name": "@cqlink/cha",
+  "name": "@cqlinkoff/cha",
   "version": "1.0.0",
   "description": "A Set of React Components",
   "main": "lib/index.js",
@@ -31,9 +31,9 @@
   "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cqlink/cha/issues"
+    "url": "https://github.com/cqlinkoff/cha/issues"
   },
-  "homepage": "https://github.com/cqlink/cha#readme",
+  "homepage": "https://github.com/cqlinkoff/cha#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",

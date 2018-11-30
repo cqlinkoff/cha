@@ -5,7 +5,7 @@
 ## Use
 
 ```js
-import { Checkbox } from '@cqmbr/cha'
+import { Checkbox } from '@cqlinkoff/cha'
 ```
 
 ## Props

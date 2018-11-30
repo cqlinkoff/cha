@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-npm install @cqmbr/cha
+npm install @cqlinkoff/cha
 ```
 
 ## Use
@@ -13,7 +13,7 @@ npm install @cqmbr/cha
 ### example
 
 ```js
-import { Scroll } from '@cqmbr/cha'
+import { Scroll } from '@cqlinkoff/cha'
 
 export default App extends React.PureComponent {
   render () {
@@ -32,10 +32,10 @@ See [Components](#components) docs for more detail
 
 ### DONE
 
-- [x] [`ActivityIndicator`](https://github.com/cqmbr/cha/tree/master/src/activity-indicator)
-- [x] [`Card`](https://github.com/cqmbr/cha/tree/master/src/card)
-- [x] [`Checkbox`](https://github.com/cqmbr/cha/tree/master/src/checbox)
-- [x] [`Scroll`](https://github.com/cqmbr/cha/tree/master/src/scroll)
+- [x] [`ActivityIndicator`](https://github.com/cqlinkoff/cha/tree/master/src/activity-indicator)
+- [x] [`Card`](https://github.com/cqlinkoff/cha/tree/master/src/card)
+- [x] [`Checkbox`](https://github.com/cqlinkoff/cha/tree/master/src/checbox)
+- [x] [`Scroll`](https://github.com/cqlinkoff/cha/tree/master/src/scroll)
 
 ### TODO
 

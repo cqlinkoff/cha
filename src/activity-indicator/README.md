@@ -5,7 +5,7 @@
 ## Use
 
 ```js
-import { ActivityIndicator } from '@cqmbr/cha'
+import { ActivityIndicator } from '@cqlinkoff/cha'
 ```
 
 ## Props
